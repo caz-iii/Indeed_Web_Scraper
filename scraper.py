@@ -10,7 +10,7 @@ dataframe = pd.DataFrame(columns=["Title", "Company", "Location", "Salary", "Des
 # e.g. if start ends at 170 for the last page, enter 180
 for i in range(0, 180, 10):
     # Enter url of search here
-    url = "https://www.indeed.com/jobs?q=Senior+Software+Engineer&l=Philadelphia%2C+PA"
+    url = ""
     driver.get(url + "&start=" + str(i))
     driver.implicitly_wait(3)
 
@@ -38,10 +38,6 @@ for i in range(0, 180, 10):
         except:
             salary = 'None'
 
-        #jd = soup.find(class_="summary").text.strip()
-
-
-
         sum_div = job.find_elements_by_class_name("summary")[0]
 
         try:
@@ -60,4 +56,4 @@ for i in range(0, 180, 10):
                                       "Description": jd},
                                      ignore_index=True)
 
-dataframe.to_csv("b.csv", index=False)
+dataframe.to_csv("dataset.csv", index=False)
