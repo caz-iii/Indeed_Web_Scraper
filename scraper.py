@@ -8,7 +8,7 @@ dataframe = pd.DataFrame(columns=["Title", "Company", "Location", "Salary", "Des
 
 # Depending on how many pages return, set 100 to where the &start= value is on the last page and add 10
 # e.g. if start ends at 170 for the last page, enter 180
-for i in range(0, 180, 10):
+for i in range(0, 100, 10):
     # Enter url of search here
     url = ""
     driver.get(url + "&start=" + str(i))
